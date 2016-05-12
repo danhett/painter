@@ -6,18 +6,20 @@
  *
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
-class ProjectionScreen extends PApplet {
-
+class ProjectionScreen extends PApplet 
+{
   float markerX = 0;
   float markerY = 0;
   int r = 0;
   
-  public void settings() {
+  public void settings() 
+  {
     size(800, 450);
     //fullScreen(1);
   }
   
-  public void draw() {
+  public void draw() 
+  {
     background(0);
     
     fill(255);

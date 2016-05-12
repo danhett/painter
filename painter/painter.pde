@@ -10,6 +10,7 @@
  */
 
 import at.mukprojects.console.*;
+import interfascia.*;
  
 ProjectionScreen projection;
 ControlScreen controls;

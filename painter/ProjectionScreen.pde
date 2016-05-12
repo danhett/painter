@@ -6,8 +6,11 @@
  *
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
-public class ProjectionScreen extends PApplet {
+class ProjectionScreen extends PApplet {
 
+  int markerX = 0;
+  int markerY = 0;
+  
   public void settings() {
     size(800, 600);
     //fullScreen(1);
@@ -16,10 +19,12 @@ public class ProjectionScreen extends PApplet {
   public void draw() {
     background(255);
     fill(0);
-    ellipse(100, 50, 10, 10);
+    ellipse(markerX, markerY, 10, 10);
   }
   
-  public void mousePressed() {
-    
+  public void updateMarker(int x, int y)
+  {
+      markerX = x;
+      markerY = y;
   }
 }

@@ -8,7 +8,13 @@
  * 
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
+ 
+ProjectionScreen projection;
+ControlScreen controls;
+ 
 void setup() {  
+  frameRate(30);
+  
   spawnProjectionScreen();
   spawnControlScreen();
 }
@@ -17,21 +23,21 @@ void setup() {
 void spawnProjectionScreen()
 {
   String[] args = {"Projection"};
-  ProjectionScreen sa = new ProjectionScreen();
-  PApplet.runSketch(args, sa);
+  projection = new ProjectionScreen();
+  PApplet.runSketch(args, projection);
 }
 
 // Create the controls
 void spawnControlScreen()
 {
   String[] args = {"Controls"};
-  ControlScreen sa = new ControlScreen();
-  PApplet.runSketch(args, sa);
+  controls = new ControlScreen();
+  PApplet.runSketch(args, controls);
   
-  sa.connect(this);
+  controls.connect(this);
 }
 
-void setPosition(String msg) 
+void setPosition(int x, int y)
 {
-  println(msg);
+  projection.updateMarker(x,y);
 }

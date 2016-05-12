@@ -6,7 +6,7 @@
  *
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
-public class ControlScreen extends PApplet {
+class ControlScreen extends PApplet {
 
   painter parent; // root
   
@@ -17,12 +17,11 @@ public class ControlScreen extends PApplet {
   void connect(painter ref)
   {
       parent = ref;
-      parent.setPosition("hey");
   }
   
   public void draw() {
     background(255, 0, 0);
-    fill(0);
-    ellipse(100, 50, 10, 10);
+    ellipse(mouseX, mouseY, 10, 10);
+    parent.setPosition(mouseX, mouseY);
   }
 }

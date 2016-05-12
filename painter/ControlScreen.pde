@@ -8,10 +8,13 @@
  */
 class ControlScreen extends PApplet {
 
+  boolean enableConsole = false;
+  Console console;  
   painter parent; // root
   
   public void settings() {
-    size(800, 600);
+    size(800, 450);
+    //fullScreen();
   }
   
   void connect(painter ref)
@@ -19,9 +22,25 @@ class ControlScreen extends PApplet {
       parent = ref;
   }
   
+  public void setup() {
+    
+    if(enableConsole)
+    {
+      console = new Console(this);
+      console.start(); 
+    }
+  }
+  
   public void draw() {
-    background(255, 0, 0);
-    ellipse(mouseX, mouseY, 10, 10);
+    background(255);
+    ellipse(mouseX, mouseY, 20, 20);
+    
     parent.setPosition(mouseX, mouseY);
+    
+    if(enableConsole)
+    {
+      console.draw();
+      console.print(); 
+    }
   }
 }

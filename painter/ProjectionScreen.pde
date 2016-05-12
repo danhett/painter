@@ -8,21 +8,32 @@
  */
 class ProjectionScreen extends PApplet {
 
-  int markerX = 0;
-  int markerY = 0;
+  float markerX = 0;
+  float markerY = 0;
+  int r = 0;
   
   public void settings() {
-    size(800, 600);
+    size(800, 450);
     //fullScreen(1);
   }
   
   public void draw() {
-    background(255);
-    fill(0);
-    ellipse(markerX, markerY, 10, 10);
+    background(0);
+    
+    fill(255);
+    stroke(255);
+    
+    ellipse(markerX, markerY, 5, 5);
+    translate(markerX, markerY);
+    
+    pushMatrix();
+    rotate(millis()/25);
+    line(-1000, -1000, 1000, 1000);
+    line(-1000, 1000, 1000, -1000);
+    popMatrix();
   }
   
-  public void updateMarker(int x, int y)
+  public void updateMarker(float x, float y)
   {
       markerX = x;
       markerY = y;

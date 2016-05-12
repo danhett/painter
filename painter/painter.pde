@@ -8,11 +8,15 @@
  * 
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
+
+import at.mukprojects.console.*;
  
 ProjectionScreen projection;
 ControlScreen controls;
  
 void setup() {  
+  size(200, 200, P2D);
+    
   frameRate(30);
   
   spawnProjectionScreen();
@@ -39,5 +43,5 @@ void spawnControlScreen()
 
 void setPosition(int x, int y)
 {
-  projection.updateMarker(x,y);
+  projection.updateMarker(x, y);
 }

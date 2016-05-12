@@ -16,10 +16,8 @@ ProjectionScreen projection;
 ControlScreen controls;
  
 void setup() {  
-  size(200, 200, P2D);
-    
-  frameRate(30);
-  
+  size(800, 600, P2D);
+      
   spawnProjectionScreen();
   spawnControlScreen();
 }

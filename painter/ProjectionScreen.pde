@@ -10,11 +10,12 @@ class ProjectionScreen extends PApplet
 {
   float markerX = 0;
   float markerY = 0;
-  int r = 0;
+  float spin = 0;
+  float r = 2000;
   
   public void settings() 
   {
-    size(800, 450);
+    size(1600, 900);
     //fullScreen(1);
   }
   
@@ -29,15 +30,18 @@ class ProjectionScreen extends PApplet
     translate(markerX, markerY);
     
     pushMatrix();
-    rotate(millis()/25);
-    line(-1000, -1000, 1000, 1000);
-    line(-1000, 1000, 1000, -1000);
+    spin += 0.02;
+    rotate(spin);
+    line(-r, -r, r, r);
+    line(-r, 0, r, 0);
+    line(-r, r, r, -r);
+    line(0, -r, 0, r);
     popMatrix();
   }
   
   public void updateMarker(float x, float y)
   {
-      markerX = x;
-      markerY = y;
+      markerX = x * 2;
+      markerY = y * 2;
   }
 }

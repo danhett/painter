@@ -39,9 +39,9 @@ class ControlScreen extends PApplet
     c = new GUIController(this);
     rc = new IFRadioController("Mode Selector");
     
-    b1 = new IFRadioButton("Reality Distortion Field", 20, 20, rc);
-    b2 = new IFRadioButton("Infinite Improbability Drive", 20, 40, rc);
-    b3 = new IFRadioButton("Bistromathic Drive", 20, 60, rc);
+    b1 = new IFRadioButton("Texture", 20, 20, rc);
+    b2 = new IFRadioButton("Intensity", 20, 40, rc);
+    b3 = new IFRadioButton("Color shift", 20, 60, rc);
     
     c.add(b1);
     c.add(b2);

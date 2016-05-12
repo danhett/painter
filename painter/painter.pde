@@ -13,13 +13,26 @@ import at.mukprojects.console.*;
 import interfascia.*;
  
 ProjectionScreen projection;
-ControlScreen controls;
+InteractionCanvas interaction;
+
+GUIController c;
+IFRadioController rc;
+IFRadioButton b1, b2, b3;
  
-void setup() {  
-  size(800, 600, P2D);
+void setup() 
+{  
+  size(640, 480, P2D);
       
   spawnProjectionScreen();
-  spawnControlScreen();
+  spawnDrawingSurface();
+  
+  createControls();
+}
+
+void draw() 
+{
+  background(100);
+  surface.setSize(640, 480);
 }
 
 // Create the projection surface used to map onto
@@ -30,14 +43,29 @@ void spawnProjectionScreen()
   PApplet.runSketch(args, projection);
 }
 
-// Create the controls
-void spawnControlScreen()
+// Create the surface we'll use to draw elements
+void spawnDrawingSurface()
 {
-  String[] args = {"Controls"};
-  controls = new ControlScreen();
-  PApplet.runSketch(args, controls);
+  String[] args = {"Interaction"};
+  interaction = new InteractionCanvas();
+  PApplet.runSketch(args, interaction);
   
-  controls.connect(this);
+  interaction.connect(this);
+}
+
+// Create the on-screen controls
+void createControls() 
+{
+  c = new GUIController(this);
+  rc = new IFRadioController("Mode Selector");
+  
+  b1 = new IFRadioButton("Texture", 20, 20, rc);
+  b2 = new IFRadioButton("Intensity", 20, 40, rc);
+  b3 = new IFRadioButton("Color shift", 20, 60, rc);
+  
+  c.add(b1);
+  c.add(b2);
+  c.add(b3);
 }
 
 void setPosition(int x, int y)

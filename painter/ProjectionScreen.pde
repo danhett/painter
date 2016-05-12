@@ -23,14 +23,14 @@ class ProjectionScreen extends PApplet
   {
     background(0);
     
-    fill(255);
+    noFill();
     stroke(255);
     
-    ellipse(markerX, markerY, 5, 5);
+    ellipse(markerX, markerY, 30, 30);
     translate(markerX, markerY);
     
     pushMatrix();
-    spin += 0.02;
+    spin += 0.01;
     rotate(spin);
     line(-r, -r, r, r);
     line(-r, 0, r, 0);

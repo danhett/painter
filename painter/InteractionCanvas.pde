@@ -1,21 +1,16 @@
 /** 
- * CONTROL SCREEN
+ * INTERACTION CANVAS
  *
  * Allows the user to create and edit zones and styles, 
  * which are then mapped to locations on a painting.
  *
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
-class ControlScreen extends PApplet 
+class InteractionCanvas extends PApplet 
 {
   boolean enableConsole = false;
   Console console;  
   painter parent; // root
-  
-  GUIController c;
-  IFRadioController rc;
-  
-  IFRadioButton b1, b2, b3;
   
   public void settings() 
   {
@@ -35,17 +30,6 @@ class ControlScreen extends PApplet
       console = new Console(this);
       console.start(); 
     }
-    
-    c = new GUIController(this);
-    rc = new IFRadioController("Mode Selector");
-    
-    b1 = new IFRadioButton("Texture", 20, 20, rc);
-    b2 = new IFRadioButton("Intensity", 20, 40, rc);
-    b3 = new IFRadioButton("Color shift", 20, 60, rc);
-    
-    c.add(b1);
-    c.add(b2);
-    c.add(b3);
   }
   
   public void draw() 

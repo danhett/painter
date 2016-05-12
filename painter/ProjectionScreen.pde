@@ -13,6 +13,11 @@ class ProjectionScreen extends PApplet
   float spin = 0;
   float r = 2000;
   
+  public void setup()
+  {
+    surface.setTitle("[Projection]");
+  }
+  
   public void settings() 
   {
     size(1600, 900);

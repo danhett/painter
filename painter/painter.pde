@@ -23,6 +23,8 @@ void setup()
 {  
   size(640, 480, P2D);
       
+  surface.setTitle("[Painter]");
+      
   spawnProjectionScreen();
   spawnDrawingSurface();
   

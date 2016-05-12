@@ -12,6 +12,17 @@ class InteractionCanvas extends PApplet
   Console console;  
   painter parent; // root
   
+  public void setup() 
+  {   
+    surface.setTitle("[Interaction Canvas]");
+    
+    if(enableConsole)
+    {
+      console = new Console(this);
+      console.start(); 
+    }
+  }
+  
   public void settings() 
   {
     size(800, 450);
@@ -21,15 +32,6 @@ class InteractionCanvas extends PApplet
   void connect(painter ref)
   {
       parent = ref;
-  }
-  
-  public void setup() 
-  {   
-    if(enableConsole)
-    {
-      console = new Console(this);
-      console.start(); 
-    }
   }
   
   public void draw() 

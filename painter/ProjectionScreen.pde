@@ -28,6 +28,11 @@ class ProjectionScreen extends PApplet
   {
     background(0);
     
+    drawMarker();
+  }
+  
+  public void drawMarker()
+  {
     noFill();
     stroke(255);
     

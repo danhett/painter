@@ -20,7 +20,7 @@ class ProjectionScreen extends PApplet
   
   public void settings() 
   {
-    size(1600, 900);
+    size(800, 450);
     //fullScreen(1);
   }
   
@@ -47,11 +47,11 @@ class ProjectionScreen extends PApplet
     line(-r, r, r, -r);
     line(0, -r, 0, r);
     popMatrix();
-  }
+  }  
   
   public void updateMarker(float x, float y)
   {
-      markerX = x * 2;
-      markerY = y * 2;
+      markerX = x;
+      markerY = y;
   }
 }

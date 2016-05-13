@@ -10,7 +10,7 @@ class InteractionCanvas extends PApplet
 {
   boolean enableConsole = false;
   Console console;  
-  painter parent; // root
+  Painter parent; // root
   
   public void setup() 
   {   
@@ -29,7 +29,7 @@ class InteractionCanvas extends PApplet
     //fullScreen();
   }
   
-  void connect(painter ref)
+  void connect(Painter ref)
   {
       parent = ref;
   }

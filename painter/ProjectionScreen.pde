@@ -1,5 +1,5 @@
 /** 
- * PROJECTION SCREEN
+ * ProjectionScreen
  *
  * Projection client that displays edit zones, 
  * designed to be overlaid on physical paintings.

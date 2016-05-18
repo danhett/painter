@@ -1,5 +1,5 @@
 /** 
- * INTERACTION CANVAS
+ * InteractionCanvas
  *
  * Allows the user to create and edit zones and styles, 
  * which are then mapped to locations on a painting.

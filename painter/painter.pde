@@ -1,5 +1,5 @@
 /** 
- * PAINTER
+ * Painter
  *
  * Designed to enhance live paintings with animated or stylised zones.
  * Runs on two screens, designed for machine and projector.
@@ -8,6 +8,13 @@
  * 
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com) 
  */
+
+// TODO - add some sort of config
+// TODO - scaling calculation! needs to work if projection is full screen or scaled
+// TODO - add painting menu, so multiple paintings can be mapped
+// TODO - multiple drawing canvases controlled with the UI
+// TODO - break UI logic out into it's own components
+// TODO - allow different brush sizes etc controlled with the UI
 
 import at.mukprojects.console.*;
 import interfascia.*;
@@ -22,6 +29,8 @@ IFRadioButton b1, b2, b3;
 void setup() 
 {  
   size(640, 480, P2D);
+      
+  frameRate(100);
       
   surface.setTitle("[Painter]");
       

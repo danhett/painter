@@ -12,26 +12,52 @@ class ProjectionScreen extends PApplet
   float markerY = 0;
   float spin = 0;
   float r = 2000;
+  DrawCanvas canvas;
+  boolean drawing = false;
   
-  public void setup()
-  {
-    surface.setTitle("[Projection]");
-  }
-  
+  /**
+   * Sets up the projection screen.
+   */
   public void settings() 
   {
     size(800, 450);
     //fullScreen(1);
   }
-  
-  public void draw() 
+  public void setup()
   {
-    background(0);
+    surface.setTitle("[Projection]");
     
-    drawMarker();
+    canvas = new DrawCanvas();
   }
   
-  public void drawMarker()
+  
+  /**
+   * Draw loop. Called every frame.
+   */
+  public void draw() 
+  {    
+    background(0);
+    
+    if(drawing)
+    {
+      canvas.surface.beginDraw();
+      canvas.surface.fill(255);
+      canvas.surface.noStroke();
+      canvas.surface.ellipse(markerX, markerY, 10, 10); 
+      canvas.surface.endDraw(); 
+    }
+    
+    image(canvas.surface, 0, 0);
+    
+    drawDebugTarget();
+  }
+  
+  
+  /**
+   * Draws a targeting reticule around the user's input
+   * point. Hard to find otherwise when projection-mapping.
+   */
+  public void drawDebugTarget()
   {
     noFill();
     stroke(255);
@@ -49,9 +75,16 @@ class ProjectionScreen extends PApplet
     popMatrix();
   }  
   
-  public void updateMarker(float x, float y)
+  
+  /**
+   * Actually draws stuff if the user is doing so. 
+   * Possible edits here if using a touch screen.
+   */
+  public void drawFromCanvas(float _x, float _y, boolean _drawing)
   {
-      markerX = x;
-      markerY = y;
+      markerX = _x;
+      markerY = _y;
+
+      drawing = _drawing;
   }
 }

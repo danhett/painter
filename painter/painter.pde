@@ -70,7 +70,7 @@ void createControls()
   c.add(b3);
 }
 
-void setPosition(int x, int y)
+void setPosition(int x, int y, boolean drawing)
 {
-  projection.updateMarker(x, y);
+  projection.drawFromCanvas(x, y, drawing);
 }

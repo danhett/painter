@@ -10,8 +10,12 @@ class InteractionCanvas extends PApplet
 {
   boolean enableConsole = false;
   Console console;  
-  Painter parent; // root
+  Painter parent;
+  boolean drawing = false;
   
+  /**
+   * Sets up the interaction canvas.
+   */
   public void setup() 
   {   
     surface.setTitle("[Interaction Canvas]");
@@ -22,29 +26,46 @@ class InteractionCanvas extends PApplet
       console.start(); 
     }
   }
-  
   public void settings() 
   {
     size(800, 450);
     //fullScreen();
   }
   
+  
+  /**
+   * Gets a reference to the base class. Quick and dirty!
+   */
   void connect(Painter ref)
   {
       parent = ref;
   }
   
+  
+  /**
+   * Draw loop. Called every frame.
+   */
   public void draw() 
   {
     background(255);
     ellipse(mouseX, mouseY, 20, 20);
     
-    parent.setPosition(mouseX, mouseY);
+    parent.setPosition(mouseX, mouseY, drawing);
     
     if(enableConsole)
     {
       console.draw();
       console.print(); 
     }
+  }
+  
+  public void mousePressed()
+  {
+    drawing = true;
+  }
+  
+  public void mouseReleased()
+  {
+    drawing = false;
   }
 }

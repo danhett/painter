@@ -10,8 +10,6 @@ class ProjectionScreen extends PApplet
 {
   float markerX = 0;
   float markerY = 0;
-  float spin = 0;
-  float r = 2000;
   boolean drawing = false;
 
   DrawCanvas canvas;
@@ -52,30 +50,8 @@ class ProjectionScreen extends PApplet
 
     image(canvas.surface, 0, 0);
 
-    //reticule.update(markerX, markerY);
-  }
-
-
-  /**
-   * Draws a targeting reticule around the user's input
-   * point. Hard to find otherwise when projection-mapping.
-   */
-  public void drawDebugTarget()
-  {
-    noFill();
-    stroke(255);
-
-    ellipse(markerX, markerY, 30, 30);
-    translate(markerX, markerY);
-
-    pushMatrix();
-    spin += 0.01;
-    rotate(spin);
-    line(-r, -r, r, r);
-    line(-r, 0, r, 0);
-    line(-r, r, r, -r);
-    line(0, -r, 0, r);
-    popMatrix();
+    reticule.update(markerX, markerY);
+    image(reticule.surface, 0, 0); 
   }
 
 

@@ -9,8 +9,6 @@
  * @author Dan Hett / RITUALS (hellodanhett@gmail.com)
  */
 
-// TODO - add some sort of config
-// TODO - presentation mode and edit mode.
 // TODO - scaling calculation! needs to work if projection is full screen or scaled
 // TODO - add painting menu, so multiple paintings can be mapped
 // TODO - multiple drawing canvases controlled with the UI

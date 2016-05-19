@@ -28,7 +28,6 @@ class InteractionCanvas extends PApplet
   public void settings()
   {
     size(Config.WIDTH, Config.HEIGHT);
-    //fullScreen();
   }
 
   /**

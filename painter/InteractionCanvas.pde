@@ -39,7 +39,7 @@ class InteractionCanvas extends PApplet
   {
       parent = ref;
   }
-  
+
   /**
    * Draw loop. Called every frame.
    */

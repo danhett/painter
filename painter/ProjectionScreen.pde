@@ -48,10 +48,10 @@ class ProjectionScreen extends PApplet
       canvas.surface.endDraw();
     }
 
-    image(canvas.surface, 0, 0);
-
     reticule.update(markerX, markerY);
     image(reticule.surface, 0, 0); 
+
+    image(canvas.surface, 0, 0);
   }
 
 

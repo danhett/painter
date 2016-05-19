@@ -8,7 +8,6 @@
  */
 class InteractionCanvas extends PApplet
 {
-  boolean enableConsole = false;
   Console console;
   Painter parent;
   boolean drawing = false;
@@ -20,7 +19,7 @@ class InteractionCanvas extends PApplet
   {
     surface.setTitle("[Interaction Canvas]");
 
-    if(enableConsole)
+    if(Config.CONSOLE)
     {
       console = new Console(this);
       console.start();
@@ -28,7 +27,7 @@ class InteractionCanvas extends PApplet
   }
   public void settings()
   {
-    size(800, 450);
+    size(Config.WIDTH, Config.HEIGHT);
     //fullScreen();
   }
 
@@ -50,7 +49,7 @@ class InteractionCanvas extends PApplet
 
     parent.setPosition(mouseX, mouseY, drawing);
 
-    if(enableConsole)
+    if(Config.CONSOLE)
     {
       console.draw();
       console.print();

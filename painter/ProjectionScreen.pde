@@ -20,8 +20,12 @@ class ProjectionScreen extends PApplet
    */
   public void settings()
   {
-    size(800, 450);
-    //fullScreen(1);
+    size(Config.WIDTH, Config.HEIGHT);
+
+    if(Config.FULLSCREEN)
+    {
+      fullScreen(1);
+    }
   }
   public void setup()
   {
@@ -39,6 +43,12 @@ class ProjectionScreen extends PApplet
   {
     background(0);
 
+    if(!Config.PERFORMANCE)
+    {
+      reticule.update(markerX, markerY);
+      image(reticule.surface, 0, 0);
+    }
+
     if(drawing)
     {
       canvas.surface.beginDraw();
@@ -47,9 +57,6 @@ class ProjectionScreen extends PApplet
       canvas.surface.ellipse(markerX, markerY, 10, 10);
       canvas.surface.endDraw();
     }
-
-    reticule.update(markerX, markerY);
-    image(reticule.surface, 0, 0); 
 
     image(canvas.surface, 0, 0);
   }
